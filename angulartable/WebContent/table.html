@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="mytable">
+<head>
+<meta charset="ISO-8859-1">
+<title>Table Angular</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+<script type="text/javascript" src="js/table.js"></script>
+<link rel="stylesheet" href="css/style.css">
+
+<body>
+<div id="wrapper" ng-controller="myCntl">
+
+<table border="2" cellpadding="25" cellspacing="15">
+<tr>
+<td>Product Description</td>
+<td>Shipping</td>
+<td>Customer Reviews</td>
+<td>Price</td>
+<td>Action</td>
+</tr>
+
+<tr ng-repeat="x in myCntl">
+<td>{{x.product_discription}}</td>
+<td>{{x.shipping_details}}</td>
+<td>{{x.custmer_reviews}}</td>
+<td>{{x.price_de}}</td>
+<td><button ng-click="alpha()">Delete</button></td>
+</tr>
+
+</table>
+<br>
+<button ng-click="addData()">Add info</button>
+
+
+<div id="hideshow" ng-show="p">
+<br>
+<label style="padding-left:10px">Product Description:</label><input type="text" ng-model="proinfo">
+<br><br>
+<label style="padding-left:82px">Shipping:</label><input type="text" ng-model="proinfo1">
+<br><br>
+<label style="padding-left:18px">Customer Reviews:</label><input type="text" ng-model="proinfo2">
+<br><br>
+<label style="padding-left:106px">Price:</label><input type="text" ng-model="proinfo3">
+<button id="q" ng-click="submitData($index)">Submit</button>
+</div></div>
+<br>
+
+
+<div id="form">
+<section ng-controller="myCntl2"> 
+<div id="showForm" ng-hide="s">
+
+<button id="E" ng-click="submitinfo()">Submit Info</button>
+</div>
+
+
+<div id="hideForm" ng-show="edit">
+<button id="E2" ng-click="editinfo()">Edit Info</button>
+
+</div>
+</section>
+
+</div>
+
+<section ng-controller="myCntl3"> 
+<h3>Apply Directive at Container Level:<h3>
+  <div target-blank>
+    <a href="foo">Foo</a>
+    <a href="bar">Bar</a>
+    <a href="baz">Baz</a>
+  </div>
+  
+  <h3>Apply Directive at Anchor Level:<h3>
+  <div>
+    <a target-blank href="foo">Opens in New Window</a>
+  </div>
+  
+    <h3>Don't apply the Directive</h3>
+  <div>
+    <a href="foo">Opens in Current Window</a>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
